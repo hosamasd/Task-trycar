@@ -53,19 +53,6 @@ struct PostsScene: View {
                     }
                     
                 }
-//                if vm.postsArray.count == 0 && vm.isLoading==false{
-//                    
-//                    VStack{
-//                        Spacer()
-//                        
-//                        Text("No Data Founded!")
-//                             .font(.system(size: 20))
-//                             .fontWeight(.bold)
-//                        
-//                        Spacer()
-//                    }
-//                    
-//                }
                 
                 if vm.postsArray.count  > 0{
                     

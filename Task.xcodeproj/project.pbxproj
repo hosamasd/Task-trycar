@@ -138,7 +138,6 @@
 				4E37FC77297D5348004CFFFD /* network */,
 				4EA7C17B297D5B6900C42FAC /* view */,
 				4E37FC76297D532B004CFFFD /* scene */,
-				4E37FC75297D5323004CFFFD /* New Group */,
 				4E37FC4C297D5265004CFFFD /* Assets.xcassets */,
 				4E37FC4E297D5265004CFFFD /* Task.entitlements */,
 				4E37FC47297D5263004CFFFD /* Task.xcdatamodeld */,
@@ -170,13 +169,6 @@
 				4E37FC66297D5266004CFFFD /* TaskUITestsLaunchTests.swift */,
 			);
 			path = TaskUITests;
-			sourceTree = "<group>";
-		};
-		4E37FC75297D5323004CFFFD /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		4E37FC76297D532B004CFFFD /* scene */ = {
