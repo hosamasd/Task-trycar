@@ -9,12 +9,14 @@ import SwiftUI
 
 @main
 struct TaskApp: App {
-    let persistenceController = PersistenceController.shared
-
+//    let persistenceController = PersistenceController.shared
+    @StateObject private var dataController = FavoriteViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environmentObject(dataController)
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
