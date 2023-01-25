@@ -9,7 +9,6 @@ import SwiftUI
 import CoreData
 
 struct FavoriteScene: View {
-    @State var columns = Array(repeating: GridItem(.flexible(), spacing: 12), count: 1)
     @EnvironmentObject var vm:FavoriteViewModel//()
 
     @Environment(\.managedObjectContext) private var viewContext
@@ -27,6 +26,8 @@ struct FavoriteScene: View {
                     .fontWeight(.bold)
                 
                 Spacer()
+                
+               
 
             }
             .padding()
@@ -47,27 +48,28 @@ struct FavoriteScene: View {
             }
             
             if favorites.count > 0 {
+
                 List {
-//                ScrollView(.vertical,showsIndicators:false) {
-//                    LazyVGrid(columns: columns,spacing:24){
+//                ScrollView(.vertical,showsIn
                         ForEach(favorites,id:\.id){index in
                             var product = PostModel(userID: Int(index.userID), id: Int(index.id), title: index.title ?? "", body: index.body ?? "")
                             FavoriteRowView(x: product)
-                            //                        PostRowView(x: index)
-                            
+                                .padding(.horizontal,16)
                         }
                         .onDelete(perform: deleteProducts)
 
-//                    }
+
+                    }
                 }
             }
-        }
+        
             
         
     }
     
    
-       
+   
+    
        private func saveContext() {
            do {
                try viewContext.save()

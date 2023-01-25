@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4E37FC44297D5263004CFFFD /* TaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FC43297D5263004CFFFD /* TaskApp.swift */; };
-		4E37FC46297D5263004CFFFD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FC45297D5263004CFFFD /* Persistence.swift */; };
 		4E37FC49297D5263004CFFFD /* Task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FC47297D5263004CFFFD /* Task.xcdatamodeld */; };
 		4E37FC4B297D5263004CFFFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FC4A297D5263004CFFFD /* ContentView.swift */; };
 		4E37FC4D297D5265004CFFFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E37FC4C297D5265004CFFFD /* Assets.xcassets */; };
@@ -54,7 +53,6 @@
 /* Begin PBXFileReference section */
 		4E37FC40297D5263004CFFFD /* Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E37FC43297D5263004CFFFD /* TaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskApp.swift; sourceTree = "<group>"; };
-		4E37FC45297D5263004CFFFD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4E37FC48297D5263004CFFFD /* Task.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Task.xcdatamodel; sourceTree = "<group>"; };
 		4E37FC4A297D5263004CFFFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4E37FC4C297D5265004CFFFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				4E37FC43297D5263004CFFFD /* TaskApp.swift */,
-				4E37FC45297D5263004CFFFD /* Persistence.swift */,
 				4E37FC4A297D5263004CFFFD /* ContentView.swift */,
 				4E4A1F172981296F0011533A /* caching */,
 				4E37FC77297D5348004CFFFD /* network */,
@@ -404,7 +401,6 @@
 				4E37FC74297D52CD004CFFFD /* PostsScene.swift in Sources */,
 				4E37FC4B297D5263004CFFFD /* ContentView.swift in Sources */,
 				4EA7C192297D673D00C42FAC /* TabBar.swift in Sources */,
-				4E37FC46297D5263004CFFFD /* Persistence.swift in Sources */,
 				4EA7C17D297D5B7C00C42FAC /* PostRowView.swift in Sources */,
 				4E4A1F192981297A0011533A /* LocalJSONStore.swift in Sources */,
 				4E37FC7D297D5446004CFFFD /* PostsViewModel.swift in Sources */,

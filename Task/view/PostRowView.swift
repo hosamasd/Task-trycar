@@ -28,7 +28,7 @@ struct PostRowView: View {
                 .lineLimit(3)
         }
         .padding(12)
-        .frame(width:getFrameSize().width-32)
+//        .frame(width:getFrameSize().width-32)
         .background(Color.green.opacity(0.5))
         .cornerRadius(12)
             

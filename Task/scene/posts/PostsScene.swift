@@ -14,7 +14,8 @@ struct PostsScene: View {
     @State var isConnected=true
     @State var isShowDetails=false
     @EnvironmentObject var vmm:FavoriteViewModel//()
-
+@State var index=1
+    
     var body: some View {
         VStack{
             
@@ -24,8 +25,17 @@ struct PostsScene: View {
                Text("Posts")
                     .font(.system(size: 20))
                     .fontWeight(.bold)
-                
                 Spacer()
+                
+                Button {
+                    withAnimation{
+                         changeRowNumber()
+                    }
+                } label: {
+                    Image(systemName: "list.dash")
+                }
+                .padding(.trailing)
+
 
             }
             .padding()
@@ -56,21 +66,35 @@ struct PostsScene: View {
                 
                 if vm.postsArray.count  > 0{
                     
-                    
-                    ScrollView(.vertical,showsIndicators:false) {
-                        LazyVGrid(columns: columns,spacing:24){
-                            ForEach(vm.postsArray,id:\.id){index in
-                                
-                                PostRowView(x: index)
-                                    .onTapGesture {
-                                        withAnimation{
-                                            vm.selectedPost=index
-                                            isShowDetails=true
-                                        }
+                    GeometryReader{mainView in
+                        
+                        ScrollView(.vertical,showsIndicators:false) {
+                            LazyVGrid(columns: columns,spacing:24){
+                                ForEach(vm.postsArray,id:\.id){index in
+                                    GeometryReader{item in
+                                        
+                                        PostRowView(x: index)
+                                            .onTapGesture {
+                                                withAnimation{
+                                                    vm.selectedPost=index
+                                                    isShowDetails=true
+                                                }
+                                            }
+                                        
+                                        // scaling effect from bottom....
+                                            .scaleEffect(scaleValue(mainFrame: mainView.frame(in: .global).minY, minY: item.frame(in: .global).minY),anchor: .top)
+                                        
+                                        // adding opacity effect...
+                                        .opacity(Double(scaleValue(mainFrame: mainView.frame(in: .global).minY, minY: item.frame(in: .global).minY)))
+                                        
                                     }
-                                
+                                    // setting default frame height...
+                                    .frame(height: 100)
+                                }
                             }
+                            .padding(.horizontal,16)
                         }
+                        
                     }
                     
                 }
@@ -102,6 +126,36 @@ struct PostsScene: View {
             
         }
 
+    }
+    
+    // Simple Calculation for scaling Effect...
+    
+    func scaleValue(mainFrame : CGFloat,minY : CGFloat)-> CGFloat{
+        
+        // adding animation...
+        
+        withAnimation(.easeOut){
+            
+            // reducing top padding value...
+            
+            let scale = (minY - 25) / mainFrame
+            
+            // retuning scaling value to Album View if its less than 1...
+            
+            if scale > 1{
+                
+                return 1
+            }
+            else{
+                
+                return scale
+            }
+        }
+    }
+    
+    func changeRowNumber()  {
+        index =   index < 4 ? index+1 : 1
+        columns=Array(repeating: GridItem(.flexible(), spacing: 12), count: index)
     }
 }
 
