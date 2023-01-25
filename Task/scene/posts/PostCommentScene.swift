@@ -15,8 +15,6 @@ struct PostCommentScene: View {
     @ObservedObject var vm=PostsViewModel()
     @Environment(\.managedObjectContext) private var viewContext
     
-//    @FetchRequest(entity: Favorite.entity(), sortDescriptors: [])
-//    private var products: FetchedResults<Favorite>
     @FetchRequest(sortDescriptors: []) var favorites: FetchedResults<Favorite>
     @State var isFav=false
     @EnvironmentObject var vmm:FavoriteViewModel//()
@@ -57,7 +55,6 @@ struct PostCommentScene: View {
             }
             
             if vm.postsCommentsArray.count  > 0{
-//                List {
 
                 ScrollView(.vertical,showsIndicators:false) {
                     LazyVGrid(columns: columns,spacing:24){
@@ -67,7 +64,6 @@ struct PostCommentScene: View {
                             
                         }
                     }
-//                        .onDelete(perform: deleteProducts)
 
                 }
 
@@ -92,7 +88,6 @@ struct PostCommentScene: View {
             product.title=vm.selectedPost.title
             product.body=vm.selectedPost.body
             product.userID=Double(vm.selectedPost.userID)
-            //               product.quantity = quantity
             
             saveContext()
         }
@@ -108,47 +103,9 @@ struct PostCommentScene: View {
         }
     }
     
-//    private func deleteProducts(offsets: IndexSet) {
-//        withAnimation {
-//            offsets.map { favorites[$0] }.forEach(viewContext.delete)
-//                saveContext()
-//            }
-//    }
-    
     private func deleteProducts() {
-//        let product = Favorite(
-        var qq = [PostModel]()
-
-//        favorites.forEach { s in
-//            let q = PostModel(userID: Int(s.userID), id: Int(s.id), title: s.title ?? "", body: s.body ?? "")
-//            qq.append(q)
-//        }
-//
-//        qq.removeAll(where: {$0.body == vm.selectedPost.body})
-//        if qq.count > 0 {
-//            qq.forEach { q in
-//                let product = Favorite(context: viewContext)
-//
-//                product.id = Double(q.id ) ?? 0.0
-//                product.title=q.title
-//                product.body=q.body
-//                product.userID=Double(q.userID)
-//                //               product.quantity = quantity
-//
-//                saveContext()
-//            }
-//        }else {
-//            saveContext()
-//        }
 
         withAnimation {
-//            let product = Favorite(context: viewContext)
-//            product.id = Double(vm.selectedPost.id ) ?? 0.0
-//            product.title=vm.selectedPost.title
-//            product.body=vm.selectedPost.body
-//            product.userID=Double(vm.selectedPost.userID)
-//
-//            let x = favorites.firstIndex(of: product) ?? 0
             let x = favorites.firstIndex(where: {$0.body == vm.selectedPost.body }) ?? 0
 
 

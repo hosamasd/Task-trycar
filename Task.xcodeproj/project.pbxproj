@@ -20,6 +20,7 @@
 		4E37FC7B297D53D8004CFFFD /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FC7A297D53D8004CFFFD /* PostModel.swift */; };
 		4E37FC7D297D5446004CFFFD /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FC7C297D5446004CFFFD /* PostsViewModel.swift */; };
 		4E37FC7F297D554A004CFFFD /* Network Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FC7E297D554A004CFFFD /* Network Services.swift */; };
+		4E4A1F192981297A0011533A /* LocalJSONStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4A1F18298129790011533A /* LocalJSONStore.swift */; };
 		4EA7C17D297D5B7C00C42FAC /* PostRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA7C17C297D5B7C00C42FAC /* PostRowView.swift */; };
 		4EA7C17F297D5E5D00C42FAC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA7C17E297D5E5D00C42FAC /* Reachability.swift */; };
 		4EA7C181297D601200C42FAC /* PostCommentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA7C180297D601200C42FAC /* PostCommentsModel.swift */; };
@@ -68,6 +69,7 @@
 		4E37FC7A297D53D8004CFFFD /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		4E37FC7C297D5446004CFFFD /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		4E37FC7E297D554A004CFFFD /* Network Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Services.swift"; sourceTree = "<group>"; };
+		4E4A1F18298129790011533A /* LocalJSONStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalJSONStore.swift; sourceTree = "<group>"; };
 		4EA7C17C297D5B7C00C42FAC /* PostRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowView.swift; sourceTree = "<group>"; };
 		4EA7C17E297D5E5D00C42FAC /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		4EA7C180297D601200C42FAC /* PostCommentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentsModel.swift; sourceTree = "<group>"; };
@@ -132,10 +134,11 @@
 				4E37FC43297D5263004CFFFD /* TaskApp.swift */,
 				4E37FC45297D5263004CFFFD /* Persistence.swift */,
 				4E37FC4A297D5263004CFFFD /* ContentView.swift */,
+				4E4A1F172981296F0011533A /* caching */,
+				4E37FC77297D5348004CFFFD /* network */,
 				4EA7C186297D60D600C42FAC /* helpers */,
 				4E37FC79297D536A004CFFFD /* viewmodel */,
 				4E37FC78297D5367004CFFFD /* model */,
-				4E37FC77297D5348004CFFFD /* network */,
 				4EA7C17B297D5B6900C42FAC /* view */,
 				4E37FC76297D532B004CFFFD /* scene */,
 				4E37FC4C297D5265004CFFFD /* Assets.xcassets */,
@@ -206,6 +209,14 @@
 				4EA7C18C297D663800C42FAC /* FavoriteViewModel.swift */,
 			);
 			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		4E4A1F172981296F0011533A /* caching */ = {
+			isa = PBXGroup;
+			children = (
+				4E4A1F18298129790011533A /* LocalJSONStore.swift */,
+			);
+			path = caching;
 			sourceTree = "<group>";
 		};
 		4EA7C17B297D5B6900C42FAC /* view */ = {
@@ -395,6 +406,7 @@
 				4EA7C192297D673D00C42FAC /* TabBar.swift in Sources */,
 				4E37FC46297D5263004CFFFD /* Persistence.swift in Sources */,
 				4EA7C17D297D5B7C00C42FAC /* PostRowView.swift in Sources */,
+				4E4A1F192981297A0011533A /* LocalJSONStore.swift in Sources */,
 				4E37FC7D297D5446004CFFFD /* PostsViewModel.swift in Sources */,
 				4EA7C17F297D5E5D00C42FAC /* Reachability.swift in Sources */,
 				4EA7C190297D66CE00C42FAC /* SHomeTabBar.swift in Sources */,

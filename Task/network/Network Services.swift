@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 class NetworkServices{
+    
     static func getMethodGenerics<T:Codable>(urlString:String,completion:@escaping (T?,Error?)->Void)  {
             
             guard let url = URL(string: urlString) else { return }

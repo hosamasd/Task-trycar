@@ -85,7 +85,17 @@ struct PostsScene: View {
         
         .onAppear{ if InternetConnectionManager.isConnectedToNetwork(){
             isConnected=true
-            vm.getPosts()
+            
+            let cachePostsCodabe: LocalJSONStore<[PostModel]> = LocalJSONStore(storageType: .cache, filename: "post.json")
+
+            let arraysPosts = cachePostsCodabe.storedValue ?? []
+            if arraysPosts.isEmpty {
+                vm.getPosts()
+            }else {
+                vm.postsArray=arraysPosts
+            }
+            
+//            vm.getPosts()
         }else{
             isConnected=false
         }

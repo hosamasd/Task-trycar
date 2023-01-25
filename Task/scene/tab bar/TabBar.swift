@@ -55,7 +55,7 @@ struct TabBar:View {
 //        .background(Color.red)
 //        .shadow(color: Color.black.opacity(0.04), radius: 5, x: -5, y: -5)
         
-        .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 0 : 20)
+        .padding(.bottom, getSafeArea()!.bottom == 0 ? 0 : 20)
 //
         .background(Color.white)
         .shadow(color: Color.black.opacity(0.04), radius: 5, x: -5, y: -5)

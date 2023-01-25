@@ -31,6 +31,9 @@ class PostsViewModel: ObservableObject {
             DispatchQueue.main.async {
                 withAnimation{isLoading.toggle()}
                 
+                let cachePostsCodabe: LocalJSONStore<[PostModel]> = LocalJSONStore(storageType: .cache, filename: "post.json")
+                cachePostsCodabe.save(base ?? [])
+                
                 self.postsArray=base ?? []
                 
             }

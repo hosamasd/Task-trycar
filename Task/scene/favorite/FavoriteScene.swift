@@ -11,12 +11,9 @@ import CoreData
 struct FavoriteScene: View {
     @State var columns = Array(repeating: GridItem(.flexible(), spacing: 12), count: 1)
     @EnvironmentObject var vm:FavoriteViewModel//()
-//    @FetchRequest(sortDescriptors: []) var favorite: FetchedResults<Favorite>
 
     @Environment(\.managedObjectContext) private var viewContext
        
-//       @FetchRequest(entity: Favorite.entity(), sortDescriptors: [])
-//       private var products: FetchedResults<Favorite>
     @FetchRequest(sortDescriptors: []) var favorites: FetchedResults<Favorite>
 
     var body: some View {
@@ -93,3 +90,12 @@ struct FavoriteScene_Previews: PreviewProvider {
         FavoriteScene()
     }
 }
+
+
+
+
+
+
+//       @FetchRequest(entity: Favorite.entity(), sortDescriptors: [])
+//       private var products: FetchedResults<Favorite>
+//    @FetchRequest(sortDescriptors: []) var favorite: FetchedResults<Favorite>
